@@ -6,16 +6,20 @@ import java.io.FileOutputStream;//输出流对象
 public class TestStream {
 	public static void main(String[] args) {
 		
+		File myfile = new File("d:/LOLfolder/eclipse.exe");
+		FileInputStream fis = null;		
+		
+		int k =4;
+		
+		String cs[] = new String[k];
+		File f[] = new File[k];
+		FileOutputStream fos = null;
+		
 		try{
-			File myfile = new File("d:/LOLfolder/eclipse.exe");
+			fis = new FileInputStream(myfile);
 			byte []a = new byte[(int)myfile.length()];
-			FileInputStream fis = new FileInputStream(myfile);
 			fis.read(a);
-			fis.close();
-			int k =4;
-			String cs[] = new String[k];
-			File f[] = new File[k];
-			FileOutputStream fos;
+			
 			System.out.println(a.length);
 			int start = 0;
 			int end = -1;
@@ -39,13 +43,24 @@ public class TestStream {
 					System.arraycopy(a, start, b, 0, end-start);
 					fos.write(b);
 				}
-				fos.close();
+				//fos.close();
 			}
 				
 		}
 		catch(IOException e)
 		{
 			e.printStackTrace();
+		}
+		finally{
+			if (null != fis || null != fos)
+				try{
+					fis.close();
+					fos.close();
+				}
+				catch(IOException e)
+				{
+					e.printStackTrace();
+				}
 		}
 		
 	}
