@@ -8,9 +8,9 @@ import java.io.IOException;
 public class myBufferedReader {
 	public static void main(String[] args) {
 		File f = new File("d:/LOLfolder/lol.txt");
-		try(BufferedReader fbr = new BufferedReader(new FileReader(f))){//»º´æ×Ö·ûÊäÈëÁ÷
+		try(BufferedReader fbr = new BufferedReader(new FileReader(f))){//ç¼“å­˜å­—ç¬¦è¾“å…¥æµ
 			while (true) {
-                // Ò»´Î¶ÁÒ»ĞĞ
+                // ä¸€æ¬¡è¯»ä¸€è¡Œ
                 String line = fbr.readLine();
                 if (null == line)
                     break;
@@ -22,9 +22,9 @@ public class myBufferedReader {
 			e.printStackTrace();
 		}
 		File f2 = new File("d:/LOLfolder/lol2.txt");
-		try(PrintWriter pw = new PrintWriter(new FileWriter(f2))){//»º´æ×Ö·ûÊä³öÁ÷
+		try(PrintWriter pw = new PrintWriter(new FileWriter(f2))){//ç¼“å­˜å­—ç¬¦è¾“å‡ºæµ
             pw.println("garen kill teemo");
-            pw.flush();//Á¢¼´°ÑÊı¾İĞ´ÈëÓ²ÅÌ
+            pw.flush();//ç«‹å³æŠŠæ•°æ®å†™å…¥ç¡¬ç›˜
             pw.println("teemo revive after 1 minutes");
             pw.println("teemo try to garen, but killed again");
 			
@@ -33,7 +33,7 @@ public class myBufferedReader {
 			e.printStackTrace();
 		}
 		File f3 = new File("d:/LOLfolder/removeComments.java");
-		removeComments(f3);
+		removeComments(f3);//åˆ é™¤æºç æ–‡ä»¶ä¸­çš„æ³¨é‡Šè¡Œ
 	}
 	
 	public static void removeComments(File javaFile){
@@ -54,7 +54,7 @@ public class myBufferedReader {
 		{
 			e.printStackTrace();
 		}
-		int m = 0;//mÊÇÉ¾¼õºóµÄĞĞÊı
+		int m = 0;//mæ˜¯åˆ å‡åçš„è¡Œæ•°
 		String [] newLine = new String[i];
 		for(int j = 0; j < i; j++){
 			char []tmp = cs[j].toCharArray();
